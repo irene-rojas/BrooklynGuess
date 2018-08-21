@@ -5,14 +5,16 @@ body {
 
 .header {
     margin: 0 auto;
+    width: 700px;
 }
 
 #content {
     background-color: white;
     opacity: .80;
     border: 5px solid #0153cd;
-    width: 800px;
+    width: 700px;
     text-align: center;
+    margin: 0 auto;
 }
 
 hr {
