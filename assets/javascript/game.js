@@ -7,7 +7,24 @@ var wins = 0;
 var guessRemain = 0;
 var lettersGuessed 
 
+var name = names[Math.floor(Math.random()*names.length)];
 
+var answersArray = [];
+    for (var i = 0; i < name.length; i++) {
+        answerArray[i] = "_";
+    }
+
+    var remainingLetters = name.length;
+
+
+
+
+
+
+
+
+
+    
     document.onkeyup = function() {
     // alert("working");
 
@@ -32,6 +49,7 @@ var lettersGuessed
             }
         }
 
+        document.querySelector('#game').innerHTML = html;
     // }
     // end function
 
