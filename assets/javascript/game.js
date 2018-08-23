@@ -1,68 +1,75 @@
-// var names = ["jake", "amy", "gina", "rosa", "charles", "terry", "holt"];
-
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+console.log(alphabet);
 
+// name choice options
 var names = ['jake', 'amy', 'gina', 'rosa', 'charles', 'terry', 'holt'];
-var wins = 0;
-var guessRemain = 0;
-var lettersGuessed 
+console.log(names);
 
-var name = names[Math.floor(Math.random()*names.length)];
+var start = document.querySelector("#start");
 
-var answersArray = [];
-    for (var i = 0; i < name.length; i++) {
-        answerArray[i] = "_";
-    }
+document.getElementById("start").addEventListener("click", function() {
+    var name = names[Math.floor(Math.random()*names.length)];
+    console.log(name);
 
-    var remainingLetters = name.length;
+}
+);
 
+start.onclick = function() {
 
-
-
+}
 
 
 
 
 
-    
-    document.onkeyup = function() {
-    // alert("working");
-
-    // computer chooses a name
-    var computerGuess = names[Math.floor(Math.random()*names.length)];
-
-    console.log(computerGuess);
 
 
-    // user chooses a letter
+
+
+
+
+
+
+
+// initialize game
+document.onkeyup = function() {
+
     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+        // console.log(userGuess);
 
-    console.log(userGuess);
+        if ((userGuess===alphabet)) {
+            
+            // computer chooses one name
+            var name = names[Math.floor(Math.random()*names.length)];
+                console.log(name);
 
-    // if userGuess comes from var alphabet, they have chosen correctly on click.
-
-        if (userGuess == 'a' || userGuess == 'b' || userGuess == 'c') { 
-            // alert("chosen correctly");
-            // if userGuess is letter in computerGuess name, show letter in corresponding location.
-        } else {
-            alert("Please choose a, b, or c");
-            }
+                // show dashes instead of word
+                var answersArray = [];
+                for (var i = 0; i < name.length; i++) {
+                    answerArray[i] = "_ ";
+                }
         }
 
-        document.querySelector('#game').innerHTML = html;
-    // }
-    // end function
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //  || userGuess=== 'd' || userGuess=== 'e' || userGuess=== 'f' || userGuess=== 'g' || userGuess=== 'h' || userGuess=== 'i' || userGuess=== 'j' || userGuess=== 'k' || userGuess=== 'l' || userGuess=== 'm' || userGuess=== 'n' || userGuess=== 'o' || userGuess=== 'p' || userGuess=== 'q' || userGuess=== 'r' || userGuess=== 's' || userGuess=== 't' || userGuess=== 'u' || userGuess=== 'v' || userGuess=== 'w' || userGuess=== 'x' || userGuess=== 'y' || userGuess=== 'z') {   
+
+
+// create key event and identify letter chosen
+// if key clicked, store letter in an array to track progress
+document.onkeyup = function(event) {
+    var letter = String.fromCharCode(event.keyCode).toLowerCase();
+
+}
+
+// save chosen letter in array
+// const
+
+// identify whether chosen letter is in selected word
+
+// if letter is in word, replace a dash with that letter
+
+// document.getElementById
+
+
+}
+// initialize game tag

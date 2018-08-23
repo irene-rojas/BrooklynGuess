@@ -16,10 +16,6 @@
 
 <body background="./assets/images/precinct.jpg">
 
-    <div id="game">
-        <p>Press any key to get started!</p>
-    </div>
-
     <!-- logo header -->
     <div class="header" id="b99_logo">
         <img src="./assets/images/b99_logo.png" alt="Brooklyn Nine-Nine" width="800px">
@@ -37,7 +33,9 @@
                 <h1>Choose your detective carefully<br>
                 (or you might get Gina...)</h1>
 
-                <h1>Press any key to get started!</h1>
+                <button id="start">Let's get started!</button>
+
+                <!-- <h1 id="start">Press any letter key to get started!</h1> -->
 
             </div>
 
@@ -49,7 +47,7 @@
 
             <div class="col-md-12">
 
-                <h1>Current name:</h1>
+                <div id="current-name">Current name:</div>
                 _ _ _ _ _ _ _
 
                 <!-- Steps to play hangman -->
@@ -67,19 +65,19 @@
               
             <div class="col-md-12">
 
-                <h1>Wins:</h1>
+                <div id="wins">Wins</div>
                 #
                 <!-- # of times user guessed the word correctly -->
             </div>
 
             <div class="col-md-12">
-                <h1>Number of Guesses Remaining:</h1>
+                <div id="guess-remain">Guesses remaining</div>
                 #
                 <!-- (# of guesses remaining for the user) -->
             </div>
 
             <div class="col-md-12">
-                <h1>Letters Already Guessed:</h1>
+                <div id="letter-already">Letters already guessed</div>
                 _ _ _ _ _ _ _ _
                 <!-- (Letters the user has guessed, displayed like L Z Y H). -->
             </div>
