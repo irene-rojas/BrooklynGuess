@@ -14,25 +14,50 @@ var answerArray = [];
         answerArray[i] = "_";
     }
 
-var remainingLetters = name.length;
+var guessRemain = 10;
+var letter = "";
+var winCounter = 0;
+var lettersGuessed = "";
 
-// the game
-while (remainingLetters > 0) {
-    console.log(answerArray.join(" "));
-    var guess = document.write("Guess a letter").innerHTML = "Guess a letter";
-    if (guess === null) {
-        break;
-    } else {
-        for (var j = 0; j < name.lenth; j++) {
-            if (word[j] === guess) {
-                answerArray[j] = guess;
-                remainingLetters--;
+// current name - start as dashes
+    var dashes = "<p>" + answerArray.join(" ") + "</p>";
+    document.getElementById('currentName').innerHTML = dashes;
+
+    document.onkeyup = function (event) {
+        letter = event.key;
+        // console.log(letter); 
+        for (var i = 0; i < name.length; i++) {
+            console.log(name[i]);
+            if (name[i] === letter) {
+                // console.log(letter);
+                answerArray[i] = letter;
+                dashes = "<p>" + answerArray.join(" ") + "</p>";
+                document.getElementById('currentName').innerHTML = dashes;            
+            } // end name=letter
+            if (answerArray[i] === name) {
+                var wins = "<p>" + answerArray.join(" ") + "</p>";
+                document.getElementById('wins').innerHTML = winCounter;
+                wins++;
+
             }
-        }
-    }
-}
+        } //end for loop
+    }; //end key event
+
+// show win counter
+    var wins = "<p>" + answerArray.join(" ") + "</p>";
+    document.getElementById('wins').innerHTML = winCounter;
+    // if user correctly completes word, winCounter++;
+    
 
 
-document.write(answerArray.join(" "));
-document.write("Detective " + name + " will see you now.");
+    // show remaining guess counter
+    document.getElementById('guessRemain').innerHTML = guessRemain;
+    // if (var i = 0; i < guessRemain.length; i++) {
+        
+    // }
+
+
+    // show letters guessed display
+    document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
+    // displays the letters the player has already guessed
 
