@@ -19,7 +19,7 @@ var remainingLetters = name.length;
 // the game
 while (remainingLetters > 0) {
     console.log(answerArray.join(" "));
-    var guess = console.log("Guess a letter");
+    var guess = document.write("Guess a letter").innerHTML = "Guess a letter";
     if (guess === null) {
         break;
     } else {
@@ -32,6 +32,7 @@ while (remainingLetters > 0) {
     }
 }
 
-// document.write(answerArray.join(" "));
+
+document.write(answerArray.join(" "));
 document.write("Detective " + name + " will see you now.");
 
