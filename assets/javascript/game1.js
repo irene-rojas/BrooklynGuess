@@ -35,6 +35,9 @@ var winCounter = 0;
                 document.getElementById('currentName').innerHTML = dashes;            
             } // end name=letter
             }; //end of first for loop
+
+
+             
             if (dashes === 0) {
                 function increment() {
                     winCounter++;

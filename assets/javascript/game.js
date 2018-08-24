@@ -25,6 +25,7 @@ var lettersGuessed = "";
 
     document.onkeyup = function (event) {
         letter = event.key;
+        
         // console.log(letter); 
         for (var i = 0; i < name.length; i++) {
             console.log(name[i]);
@@ -34,8 +35,30 @@ var lettersGuessed = "";
                 dashes = "<p>" + answerArray.join(" ") + "</p>";
                 document.getElementById('currentName').innerHTML = dashes;            
             } // end name=letter
-            }; //end of first for loop
-        } //end for loop
+
+
+            // if (lettersGuessed.key) {
+            //         case "":
+            //         console.log("Key pressed");
+            //     }
+            document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
+            };
+            // displays the letters the player has already guessed
+
+            }; //end of name.length for loop
+
+
+        
+
+             
+            // if (dashes === 0) {
+            //     function increment() {
+            //         winCounter++;
+            //         console.log(winCounter);
+            //     }
+
+            // }
+         //end for loop
     // }; //end key event
 
 
@@ -43,20 +66,13 @@ var lettersGuessed = "";
     var wins = "<p>" + answerArray.join(" ") + "</p>";
     document.getElementById('wins').innerHTML = winCounter;
     // if user correctly completes word, winCounter++;
-    
-
 
     // show remaining guess counter
     document.getElementById('guessRemain').innerHTML = guessRemain;
-    // if (var i = 0; i < guessRemain.length; i++) {
-        
-    // }
-
 
     // show letters guessed display
-    function lettersGuessed(name) {
+    // I feel an array push goes here but I don't know how to implement it.
 
-    }
-    document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
-    // displays the letters the player has already guessed
+
+
 
