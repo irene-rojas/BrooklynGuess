@@ -24,6 +24,14 @@ var lettersGuessed = [];
     var dashes = "<p>" + answerArray.join(" ") + "</p>";
     document.getElementById('currentName').innerHTML = dashes;
     
+// for (var j = 0; j < guessRemain.length; j++) {
+//     guessRemain === (guessRemain--);
+//     if (guessRemain === 0) {
+//         return 0;
+//     }
+//     console.log(guessRemain);
+//     document.getElementById('guessRemain').innerHTML = guessRemain;
+// }
 
     document.onkeyup = function (event) {
         letter = event.key;
@@ -32,7 +40,10 @@ var lettersGuessed = [];
             lettersGuessed.push(letter);
             document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
 
-        
+            guessRemain === (guessRemain--);
+            console.log(guessRemain);
+            document.getElementById('guessRemain').innerHTML = guessRemain;
+
 
         for (var i = 0; i < name.length; i++) {
             // console.log(name[i]);
