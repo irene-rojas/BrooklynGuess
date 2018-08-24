@@ -17,58 +17,65 @@ var answerArray = [];
 var guessRemain = 10;
 var letter = "";
 var winCounter = 0;
-var lettersGuessed = "";
+var lettersGuessed = [];
+
 
 // current name - start as dashes
     var dashes = "<p>" + answerArray.join(" ") + "</p>";
     document.getElementById('currentName').innerHTML = dashes;
+    
 
     document.onkeyup = function (event) {
         letter = event.key;
+        console.log(letter); 
+
+            lettersGuessed.push(letter);
+            document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
+
         
-        // console.log(letter); 
+
         for (var i = 0; i < name.length; i++) {
-            console.log(name[i]);
+            // console.log(name[i]);
             if (name[i] === letter) {
-                // console.log(letter);
+                    // console.log(letter);
                 answerArray[i] = letter;
                 dashes = "<p>" + answerArray.join(" ") + "</p>";
-                document.getElementById('currentName').innerHTML = dashes;            
+                    // console.log(letter);
+                document.getElementById('currentName').innerHTML = dashes;
+                
+           
             } // end name=letter
+            }; //end of for loop
+        }; //end of nname section
 
 
-            // if (lettersGuessed.key) {
-            //         case "":
-            //         console.log("Key pressed");
-            //     }
-            document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
-            };
-            // displays the letters the player has already guessed
+        // start of letters guessed section
+    // document.onkeyup = function (event) {
+    //     letter = event.key;
+    //     // function typedLetters() {
+    //     for (var j = 0; j < alphabet.length; j++) {
+    //         // console.log(alphabet)
+    //         var lettersGuessed = String.fromCharCode(alphabet);
+    //         // lettersGuessed.push("letter ");
+    //         document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
+    //          }
+    //         };
 
-            }; //end of name.length for loop
-
-
+    //         // displays the letters the player has already guessed
+    //     // };
         
 
              
-            // if (dashes === 0) {
-            //     function increment() {
-            //         winCounter++;
-            //         console.log(winCounter);
-            //     }
 
-            // }
-         //end for loop
-    // }; //end key event
 
 
 // show win counter
-    var wins = "<p>" + answerArray.join(" ") + "</p>";
-    document.getElementById('wins').innerHTML = winCounter;
+    // var wins = "<p>" + answerArray.join(" ") + "</p>";
+    // document.getElementById('wins').innerHTML = winCounter;
     // if user correctly completes word, winCounter++;
 
     // show remaining guess counter
-    document.getElementById('guessRemain').innerHTML = guessRemain;
+    // document.getElementById('guessRemain').innerHTML = guessRemain;
 
     // show letters guessed display
     // I feel an array push goes here but I don't know how to implement it.
