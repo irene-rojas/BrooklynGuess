@@ -34,14 +34,12 @@ var lettersGuessed = "";
                 dashes = "<p>" + answerArray.join(" ") + "</p>";
                 document.getElementById('currentName').innerHTML = dashes;            
             } // end name=letter
-            if (answerArray[i] === name) {
-                var wins = "<p>" + answerArray.join(" ") + "</p>";
-                document.getElementById('wins').innerHTML = winCounter;
-                wins++;
 
-            }
+
+            }; //end of first for loop
         } //end for loop
-    }; //end key event
+    // }; //end key event
+
 
 // show win counter
     var wins = "<p>" + answerArray.join(" ") + "</p>";
@@ -58,6 +56,9 @@ var lettersGuessed = "";
 
 
     // show letters guessed display
+    function lettersGuessed(name) {
+
+    }
     document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
     // displays the letters the player has already guessed
 
