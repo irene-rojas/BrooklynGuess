@@ -17,7 +17,7 @@ var answerArray = [];
 var guessRemain = 10;
 var letter = "";
 var winCounter = 0;
-var lettersGuessed = "";
+// var lettersGuessed = "";
 
 // current name - start as dashes
     var dashes = "<p>" + answerArray.join(" ") + "</p>";
@@ -35,6 +35,13 @@ var lettersGuessed = "";
                 document.getElementById('currentName').innerHTML = dashes;            
             } // end name=letter
             }; //end of first for loop
+            if (dashes === 0) {
+                function increment() {
+                    winCounter++;
+                    console.log(winCounter);
+                }
+
+            }
         } //end for loop
     // }; //end key event
 
@@ -54,9 +61,11 @@ var lettersGuessed = "";
 
 
     // show letters guessed display
-    function lettersGuessed(name) {
+    // I feel an array push goes here but I don't know how to implement it.
+    var lettersGuessed = "";
+    lettersGuessed.push(letter);
 
-    }
     document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
+    console.log(lettersGuessed);
     // displays the letters the player has already guessed
 
