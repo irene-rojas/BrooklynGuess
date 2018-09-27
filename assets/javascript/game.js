@@ -1,96 +1,67 @@
-var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    console.log(alphabet);
+$(document).ready(function() {
+    // var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    // console.log(alphabet);
 
-// name choice options - console
-var names = ['jake', 'amy', 'gina', 'rosa', 'charles', 'terry', 'holt'];
-    console.log(names);
+    // name choice options - console
+    var names = ['jake', 'amy', 'gina', 'rosa', 'charles', 'terry', 'holt'];
+        console.log(names);
 
-// name choice - console
-var name = names[Math.floor(Math.random()*names.length)];
-    console.log(name);
+    // name choice - console
+    var name = names[Math.floor(Math.random()*names.length)];
+        console.log(name);
 
-var answerArray = [];
-    for (var i = 0; i < name.length; i++) {
-        answerArray[i] = "_";
-    }
+    var answerArray = [];
+        for (var i = 0; i < name.length; i++) {
+            answerArray[i] = "_";
+        }
 
-var guessRemain = 10;
-var letter = "";
-var winCounter = 0;
-var lettersGuessed = [];
+    var guessRemain = 10;
+    var letter = "";
+    var winCounter = 0;
+    var lettersGuessed = [];
 
+    // display initial wins
+    var wins = 0;
+    $("#wins").append(wins);
 
 // current name - start as dashes
     var dashes = "<p>" + answerArray.join(" ") + "</p>";
-    document.getElementById('currentName').innerHTML = dashes;
+    $("#currentName").append(dashes);
     
-// for (var j = 0; j < guessRemain.length; j++) {
-//     guessRemain === (guessRemain--);
-//     if (guessRemain === 0) {
-//         return 0;
-//     }
-//     console.log(guessRemain);
-//     document.getElementById('guessRemain').innerHTML = guessRemain;
-// }
-
-    document.onkeyup = function (event) {
+    // record user letters, print, and guessRemain--
+    $("#target").bind("keyup", typer);
+    function typer(event) {
         letter = event.key;
-        console.log(letter); 
-
-            lettersGuessed.push(letter);
-            document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
-
-            guessRemain === (guessRemain--);
-            console.log(guessRemain);
-            document.getElementById('guessRemain').innerHTML = guessRemain;
-
+        lettersGuessed.push(letter);
+        // console.log(letter);
+        $("#lettersGuessed").append(letter);
+        // display remaining guesses
+        if (guessRemain == 0) {
+            alert("You would've gotten " + name);
+            location.reload();
+        }         
+        guessRemain--;
+        $("#guessRemain").text(guessRemain + " "); 
+        
 
         for (var i = 0; i < name.length; i++) {
             // console.log(name[i]);
             if (name[i] === letter) {
                     // console.log(letter);
                 answerArray[i] = letter;
-                dashes = "<p>" + answerArray.join(" ") + "</p>";
+                dashes = answerArray.join(" ");
                     // console.log(letter);
-                document.getElementById('currentName').innerHTML = dashes;
+                // document.getElementById('currentName').innerHTML = dashes;
+                $("#currentName").text(dashes);
                 
            
             } // end name=letter
             }; //end of for loop
-        }; //end of nname section
+    }
 
-
-        // start of letters guessed section
-    // document.onkeyup = function (event) {
-    //     letter = event.key;
-    //     // function typedLetters() {
-    //     for (var j = 0; j < alphabet.length; j++) {
-    //         // console.log(alphabet)
-    //         var lettersGuessed = String.fromCharCode(alphabet);
-    //         // lettersGuessed.push("letter ");
-    //         document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
-    //          }
-    //         };
-
-    //         // displays the letters the player has already guessed
-    //     // };
-        
-
-             
-
-
-
-// show win counter
-    // var wins = "<p>" + answerArray.join(" ") + "</p>";
-    // document.getElementById('wins').innerHTML = winCounter;
-    // if user correctly completes word, winCounter++;
-
-    // show remaining guess counter
-    // document.getElementById('guessRemain').innerHTML = guessRemain;
-
-    // show letters guessed display
-    // I feel an array push goes here but I don't know how to implement it.
+    $("#guessRemain").append(guessRemain);
 
 
 
 
+});

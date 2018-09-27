@@ -1,6 +1,11 @@
 body {
+    background-image: url("../images/precinct.jpg");    
     background-size: cover no-repeat;
-    /* margin: 0 auto; */
+    margin: 0 auto;
+}
+
+#logoRow {
+    text-align: center;
 }
 
 .header {
