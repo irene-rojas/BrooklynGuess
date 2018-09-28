@@ -37,13 +37,12 @@ $(document).ready(function() {
         $("#lettersGuessed").append(letter);
         // display remaining guesses
         if (guessRemain == 0) {
-            alert("You would've gotten " + name);
+            alert(name + " will see you now.");
             location.reload();
         }         
         guessRemain--;
         $("#guessRemain").text(guessRemain + " "); 
         
-
         for (var i = 0; i < name.length; i++) {
             // console.log(name[i]);
             if (name[i] === letter) {
@@ -51,7 +50,6 @@ $(document).ready(function() {
                 answerArray[i] = letter;
                 dashes = answerArray.join(" ");
                     // console.log(letter);
-                // document.getElementById('currentName').innerHTML = dashes;
                 $("#currentName").text(dashes);
                 
            
@@ -60,8 +58,5 @@ $(document).ready(function() {
     }
 
     $("#guessRemain").append(guessRemain);
-
-
-
 
 });
